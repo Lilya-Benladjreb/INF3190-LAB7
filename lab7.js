@@ -9,21 +9,30 @@ function ValiderFormulaire() {
 
     console.log(form["prenom"].value);
 
-    if(prenom == ""){
+    if (prenom == ""){
         document.getElementById("prenomErr").innerHTML = "Le prénom ne doit pas être vide"
+    }else if (prenom.length > 50) {
+        document.getElementById("prenomErr").innerHTML = "Le prénom ne peut pas contenir plus de 50 caractères"
     }
 
-    if(nom == ""){
+    if (nom == ""){
         document.getElementById("nomErr").innerHTML = "Le nom ne doit pas être vide"
+    }else if (nom.length > 40) {
+        document.getElementById("nomErr").innerHTML = "Le nom ne peut pas contenir plus de 40 caractères"
     }
 
-    if(age == ""){
+    if (age == ""){
         document.getElementById("ageErr").innerHTML = "L'âge ne doit pas être vide"
+    }else if (age.length > 2) {
+        document.getElementById("ageErr").innerHTML = "L'âge ne peut pas contenir plus de 2 caractères"
     }
+    
 
-    if(codep == ""){
+    if (codep == ""){
         document.getElementById("codepErr").innerHTML = "Le code permanent ne doit pas être vide"
+    }else if (codep.length > 12) {
+        document.getElementById("codepErr").innerHTML = "Le code permanent ne peut pas contenir plus de 12 caractères"
     }
 
     return false;
-}
+    }
