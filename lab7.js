@@ -10,9 +10,11 @@ function ValiderFormulaire() {
 
     const codepEx = new RegExp('^[A-Z]{4}[0-9]{8}$');
     const anneeDipEx = new RegExp('^[0-9]{4}$');
+    const ageEx = new RegExp('^[0-9]{2}$');
 
-    let validCodePermanent = codepEx.test(codep)
+    let validCodePermanent = codepEx.test(codep);
     let validAnneeDiplomation = anneeDipEx.test(anneediplome);
+    let validAge = ageEx.test(age);
 
     let paras = document.getElementsByTagName("p");
 
@@ -36,6 +38,8 @@ function ValiderFormulaire() {
         document.getElementById("ageErr").innerHTML = "L'âge ne doit pas être vide";
     }else if (age.length > 2) {
         document.getElementById("ageErr").innerHTML = "L'âge ne peut pas contenir plus de 2 caractères";
+    }else if (!validAge){
+        document.getElementById("ageErr").innerHTML = "L'âge ne peut pas avoir de lettres";
     }
     
     if (codep == ""){
@@ -51,6 +55,8 @@ function ValiderFormulaire() {
     }else if (!validAnneeDiplomation){
         document.getElementById("anneedipErr").innerHTML = "L'année de diplomation n'a pas le bon format";
     }
+
+    
 
     return false;
     }
