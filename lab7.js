@@ -7,6 +7,8 @@ function ValiderFormulaire() {
     let age = form["age"].value;
     let codep = form["codep"].value;
     let anneediplome = form["anneediplome"].value;
+    let etablissement = form["etablissement"].value;
+    let programme = form["programme"].value;
 
     const codepEx = new RegExp('^[A-Z]{4}[0-9]{8}$');
     const anneeDipEx = new RegExp('^[0-9]{4}$');
@@ -56,7 +58,15 @@ function ValiderFormulaire() {
         document.getElementById("anneedipErr").innerHTML = "L'année de diplomation n'a pas le bon format";
     }
 
+    if (etablissement == ""){
+        document.getElementById("etablissementErr").innerHTML = "Veuillez choisir parmi l'un des choix suivants"
+    }
     
+    if (programme == ""){
+        document.getElementById("programmeErr").innerHTML = "Le programme ne doit pas être vide"
+    }else if (programme.length > 40){
+        document.getElementById("programmeErr").innerHTML = "Le nom du programme ne doit pas excéder 40 caractères"
+    }
 
     return false;
-    }
+}
