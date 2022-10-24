@@ -1,0 +1,16 @@
+label {
+    display: inline-block;
+    text-align: right;
+    width: 200px;
+}
+
+
+div {
+    margin-bottom: 20px;
+}
+
+p {
+    display: inline-block;
+    color: red;
+    margin-left: 20px;
+}
